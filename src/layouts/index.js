@@ -1,72 +1,90 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
+import Img from 'gatsby-image'
 import Helmet from 'react-helmet'
-import { styled, injectGlobal } from 'styled-components'
+import { injectGlobal } from 'emotion'
+import { ThemeProvider } from 'emotion-theming'
 import { normalize } from 'polished'
+import t from 'tachyons-js'
 
-// import './index.css'
+import Container from '../components/atoms/container'
+import Header from '../components/organisms/header'
+import Footer from '../components/organisms/footer'
+import { theme } from '../utils/theme'
 
-const Normalize = injectGlobal`${normalize()}`
+injectGlobal`
+  ${normalize()}
 
-const Header = () => (
-  <div
-    style={{
-      fontFamily: 'objektiv-mk1',
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          Gatsby
-        </Link>
-      </h1>
+  *,
+  *::before,
+  *::after {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: ${theme.sansSerif};
+    font-size: ${theme.fontSize6}
+    line-height: ${theme.lineHeightCopy};
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: ${theme.sansSerifDisplay};
+  }
+
+  h1 {
+    font-size: ${theme.fontSize1};
+    line-height: calc(80 / 64);
+  }
+`
+
+const DefaultLayout = ({ children, data }) =>
+    <div>
+      <Helmet
+        title="James Lutley — Designer, Developer, Maker"
+        meta={[
+          { name: 'description', content: 'Sample' },
+          { name: 'keywords', content: 'sample, something' },
+        ]}
+        link={[
+          { rel: 'stylesheet', href: 'https://use.typekit.net/uon4clj.css' }
+        ]}
+      />
+      <ThemeProvider theme={theme}>
+        <div>
+          <Header siteTitle={data.site.siteMetadata.title} />
+          {children()}
+          <Footer avatar={data.file.childImageSharp.resolutions} siteTitle={data.site.siteMetadata.title} />
+        </div>
+      </ThemeProvider>
     </div>
-  </div>
-)
 
-const TemplateWrapper = ({ children }) => (
-  <div>
-    <Helmet
-      title="James Lutley — Designer, Developer, Maker"
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
-      link={[
-        { rel: 'stylesheet', href: 'https://use.typekit.net/uon4clj.css' }
-      ]}
-    />
-    <Header />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
-    </div>
-  </div>
-)
+export const query = graphql`
+  query LayoutQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    file(relativePath: { eq: "images/jameslutley.jpg"}) {
+      childImageSharp {
+        resolutions(width: 72, height: 72) {
+          ...GatsbyImageSharpResolutions
+        }
+      }
+    }
+  },
+`
 
-TemplateWrapper.propTypes = {
-  children: PropTypes.func,
+DefaultLayout.propTypes = {
+  children: PropTypes.func.isRequired,
+  data: PropTypes.object.isRequired,
 }
 
-export default TemplateWrapper
+export default DefaultLayout
