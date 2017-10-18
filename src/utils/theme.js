@@ -24,9 +24,9 @@ export const theme = {
   spacingMedium: '1rem',
   spacingMediumLarge: '1.5rem',
   spacingLarge: '2rem',
-  spacingExtraLarge: '4rem',
-  spacingExtraExtraLarge: '6rem',
-  spacingExtraExtraExtraLarge: '16rem',
+  spacingExtraLarge: '3rem',
+  spacingExtraExtraLarge: '4rem',
+  spacingExtraExtraExtraLarge: '6rem',
 
   siteMaxWidth: '100rem',
 

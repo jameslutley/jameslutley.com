@@ -14,12 +14,12 @@ class BlogPostTemplate extends React.Component {
     const next = this.props.pathContext.next
 
     const Article = styled.article`
-      padding-top: ${theme.spacingExtraExtraLarge};
-      padding-bottom: ${theme.spacingExtraExtraLarge};
+      padding-top: ${theme.spacingExtraExtraExtraLarge};
+      padding-bottom: ${theme.spacingExtraExtraExtraLarge};
     `
 
     const Header = styled.header`
-      padding-bottom: ${theme.spacingExtraExtraLarge};
+      padding-bottom: ${theme.spacingExtraExtraExtraLarge};
     `
 
     const Meta = styled.div`
@@ -51,6 +51,14 @@ class BlogPostTemplate extends React.Component {
       line-height: calc(32 / 22);
       color: ${theme.darkGray};
 
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: ${theme.nearBlack};
+      }
+
       p:first-child {
         ${t.mt0};
         font-family: ${theme.serifDisplay};
@@ -64,18 +72,22 @@ class BlogPostTemplate extends React.Component {
       <main>
         <Article>
           <Container>
-            <Header>
-              <Meta>
-                <time dateTime={post.frontmatter.rawDate}>{post.frontmatter.date}</time>
-                <ReadTime>Read time: {post.timeToRead} minutes</ReadTime>
-              </Meta>
-              <Title>
-                {post.frontmatter.title}
-              </Title>
-              <Categories>
-                {post.frontmatter.categories}
-              </Categories>
-            </Header>
+            <Flex>
+              <Box width={3/4}>
+                <Header>
+                  <Meta>
+                    <time dateTime={post.frontmatter.rawDate}>{post.frontmatter.date}</time>
+                    <ReadTime>Read time: {post.timeToRead} minutes</ReadTime>
+                  </Meta>
+                  <Title>
+                    {post.frontmatter.title}
+                  </Title>
+                  <Categories>
+                    {post.frontmatter.categories}
+                  </Categories>
+                </Header>
+              </Box>
+            </Flex>
             <Flex>
               <Box width={1/4}>
                 Author info

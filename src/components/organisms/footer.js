@@ -11,7 +11,7 @@ import ContactDetails from '../molecules/contact-details'
 import SocialIconsWithLabel from '../molecules/social-icons-with-label'
 
 const FooterContainer = styled.footer`
-  padding-top: ${props => props.theme.spacingExtraLarge};
+  padding-top: ${props => props.theme.spacingExtraExtraLarge};
   padding-bottom: ${props => props.theme.spacingExtraLarge};
   ${t.bt};
   border-color: ${props => props.theme.lightGray};
