@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'react-emotion'
 import { Flex } from 'grid-emotion'
-import t from 'tachyons-js'
 
 import NavItem from '../atoms/nav-item'
 

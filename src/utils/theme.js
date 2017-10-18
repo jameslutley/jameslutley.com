@@ -11,9 +11,12 @@ export const theme = {
   fontSize4: '1.25rem',
   fontSize5: '1.125rem',
   fontSize6: '1rem',
+  fontSizeCopy: '1.375rem',
 
   lineHeightSolid: '1',
   lineHeightCopy: '1.5',
+
+  tracked: '0.125rem',
 
   spacingExtraSmall: '0.25rem',
   spacingSmall: '0.5rem',
@@ -22,26 +25,26 @@ export const theme = {
   spacingMediumLarge: '1.5rem',
   spacingLarge: '2rem',
   spacingExtraLarge: '4rem',
-  spacingExtraExtraLarge: '8rem',
+  spacingExtraExtraLarge: '6rem',
   spacingExtraExtraExtraLarge: '16rem',
 
   siteMaxWidth: '100rem',
 
-  black: '#000',
+  // black: '#000',
   nearBlack: '#222324',
   darkGray: '#434547',
   midGray: '#5b5e61',
   gray: '#606366',
   silver: '#909499',
-  lightSilver: '#aaa',
-  moonGray: '#ccc',
+  // lightSilver: '#aaa',
+  // moonGray: '#ccc',
   lightGray: '#dcdee0',
   nearWhite: '#f5f7fa',
   white: '#fff',
 
-  darkBlue: '#00449e',
+  // darkBlue: '#00449e',
   blue: '#0779fa',
-  lightBlue: '#96ccff',
-  lightestBlue: '#cdecff',
-  washedBlue: '#f6fffe',
+  // lightBlue: '#96ccff',
+  // lightestBlue: '#cdecff',
+  // washedBlue: '#f5f7fa',
 }

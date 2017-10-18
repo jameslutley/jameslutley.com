@@ -8,10 +8,10 @@ import { ThemeProvider } from 'emotion-theming'
 import { normalize } from 'polished'
 import t from 'tachyons-js'
 
+import { theme } from '../utils/theme'
 import Container from '../components/atoms/container'
 import Header from '../components/organisms/header'
 import Footer from '../components/organisms/footer'
-import { theme } from '../utils/theme'
 
 injectGlobal`
   ${normalize()}

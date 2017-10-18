@@ -15,7 +15,7 @@ const NavItemLink = styled(Link)`
   font-family: ${props => props.theme.code};
   font-size: ${props => props.theme.fontSize6};
   line-height: ${props => props.theme.lineHeightCopy};
-  letter-spacing: calc(2rem / 16);
+  letter-spacing: ${props => props.theme.tracked};
   color: ${props => props.theme.nearBlack};
 `
 
