@@ -86,25 +86,25 @@ injectGlobal`
 `
 
 const DefaultLayout = ({ children, data }) =>
-    <div>
-      <Helmet
-        title="James Lutley — Designer, Developer, Maker"
-        meta={[
-          { name: 'description', content: 'Sample' },
-          { name: 'keywords', content: 'sample, something' },
-        ]}
-        link={[
-          { rel: 'stylesheet', href: 'https://use.typekit.net/uon4clj.css' }
-        ]}
-      />
-      <ThemeProvider theme={theme}>
-        <div>
-          <Header siteTitle={data.site.siteMetadata.title} />
-          {children()}
-          <Footer avatar={data.file.childImageSharp.resolutions} siteTitle={data.site.siteMetadata.title} />
-        </div>
-      </ThemeProvider>
-    </div>
+  <div>
+    <Helmet
+      title="James Lutley — Designer, Developer, Maker"
+      meta={[
+        { name: 'description', content: 'Sample' },
+        { name: 'keywords', content: 'sample, something' },
+      ]}
+      link={[
+        { rel: 'stylesheet', href: 'https://use.typekit.net/uon4clj.css' }
+      ]}
+    />
+    <ThemeProvider theme={theme}>
+      <div>
+        <Header siteTitle={data.site.siteMetadata.title} />
+        {children()}
+        <Footer avatar={data.file.childImageSharp.resolutions} siteTitle={data.site.siteMetadata.title} />
+      </div>
+    </ThemeProvider>
+  </div>
 
 export const query = graphql`
   query LayoutQuery {
