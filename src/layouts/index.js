@@ -28,7 +28,7 @@ injectGlobal`
   }
 
   body {
-    font-family: ${theme.sansSerif};
+    font-family: ${theme.serif};
     font-size: ${theme.fontSize6}
     line-height: ${theme.lineHeightCopy};
     font-kerning: normal;

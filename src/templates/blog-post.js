@@ -11,6 +11,8 @@ import TextBlock from '../components/atoms/text-block'
 import Avatar from '../components/molecules/avatar'
 import SocialIconsFollow from '../components/molecules/social-icons-follow'
 
+require('prismjs/themes/prism-solarizedlight.css')
+
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark

@@ -3,7 +3,7 @@ export const theme = {
   sansSerifDisplay: '"objektiv-mk1", -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, Helvetica, "Helvetica Neue", Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif',
   serif: '"bressay", Georgia, "Times New Roman", Times, serif',
   serifDisplay: '"bressay-display", Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif',
-  code: '"source-code-pro", Consolas, Monaco, monospace',
+  code: '"source-code-pro", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
 
   fontSize1: '4rem',
   fontSize2: '3rem',
@@ -49,6 +49,6 @@ export const theme = {
   darkBlue: '#076ce0',
   blue: '#0779fa',
   // lightBlue: '#6baefa',
-  // lightestBlue: '#cdecff',
-  // washedBlue: '#f5f7fa',
+  lightestBlue: '#e1edfa',
+  washedBlue: '#f5faff',
 }

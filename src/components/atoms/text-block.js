@@ -9,13 +9,20 @@ const TextBlockContainer = styled.section`
   line-height: calc(32 / 22);
   color: ${props => props.theme.darkGray};
 
-  p:first-child {
-    ${t.mt0};
-    margin-bottom: ${props => props.theme.spacingExtraLarge};
-    font-family: ${props => props.theme.serifDisplay};
-    font-size: ${props => props.theme.fontSizeLead};
-    line-height: calc(40 / 28);
-    color: ${props => props.theme.nearBlack};
+  div {
+    > h1:first-of-type,
+    > h2:first-of-type {
+      margin-top: 0;
+    }
+
+    > p:first-of-type {
+      ${t.mt0};
+      margin-bottom: ${props => props.theme.spacingExtraLarge};
+      font-family: ${props => props.theme.serifDisplay};
+      font-size: ${props => props.theme.fontSizeLead};
+      line-height: calc(40 / 28);
+      color: ${props => props.theme.nearBlack};
+    }
   }
 
   a {
@@ -70,7 +77,19 @@ const TextBlockContainer = styled.section`
     ol {
       margin-top: ${props => props.theme.spacingSmall};
       margin-bottom: ${props => props.theme.spacingSmall};
+      padding-left: ${props => props.theme.spacingMediumLarge};
     }
+  }
+
+  img {
+    max-width: calc(100% + ${props => props.theme.spacingExtraExtraLarge});
+    margin-left: -${props => props.theme.spacingLarge};
+    margin-right: -${props => props.theme.spacingLarge};
+  }
+
+  figcaption {
+    ${t.db};
+    ${t.tc};
   }
 
   blockquote,
@@ -82,22 +101,26 @@ const TextBlockContainer = styled.section`
   }
 
   abbr {
-    border-bottom: 1px dotted hsla(0,0%,0%,0.5);
+    border-bottom: 1px dotted ${props => props.theme.lightGray};
     cursor: help;
   }
 
   abbr[title] {
-    border-bottom: 1px dotted hsla(0,0%,0%,0.5);
+    border-bottom: 1px dotted ${props => props.theme.lightGray};
     cursor: help;
     text-decoration: none;
   }
 
   pre {
-    padding: ${props => props.theme.spacingMediumLarge};
-    background: hsla(0,0%,0%,0.04);
+    margin-left: -${props => props.theme.spacingLarge};
+    margin-right: -${props => props.theme.spacingLarge};
+    padding: ${props => props.theme.spacingLarge};
+    background: ${props => props.theme.washedBlue};
     font-family: ${props => props.theme.code};
     font-size: ${props => props.theme.fontSize6};
     line-height: calc(24 / 18);
+    box-shadow: inset 0 0 0 1px ${props => props.theme.lightestBlue};
+    border-radius: calc(${props => props.theme.spacingExtraSmall} * 0.75);
   }
 
   table {
@@ -113,16 +136,33 @@ const TextBlockContainer = styled.section`
 
   hr {
     height: 1px;
-    margin-bottom: calc(${props => props.theme.spacingMediumLarge} - 1px);
-    background:hsla(0,0%,0%,0.2);
+    margin-top: ${props => props.theme.spacingExtraLarge};
+    margin-bottom: calc(${props => props.theme.spacingExtraLarge} - 1px);
+    background: ${props => props.theme.lightGray};
+    border: 0;
   }
 
+  tt,
   code,
   kbd,
   samp {
     font-family: ${props => props.theme.code};
     font-size: ${props => props.theme.fontSize6};
-    line-height: calc(24 / 18);
+    line-height: calc(32 / 18);
+  }
+
+  tt,
+  code {
+    padding-left: ${props => props.theme.spacingExtraSmall};
+    padding-right: ${props => props.theme.spacingExtraSmall};
+    background: ${props => props.theme.washedBlue};
+    border-radius: calc(${props => props.theme.spacingExtraSmall} * 0.75);
+  }
+
+  pre code {
+    background: none;
+    padding-left: 0;
+    padding-right: 0;
   }
 `
 
