@@ -149,6 +149,7 @@ const TextBlockContainer = styled.section`
     font-family: ${props => props.theme.code};
     font-size: ${props => props.theme.fontSize6};
     line-height: calc(32 / 18);
+    color: ${props => props.theme.darkGray};
   }
 
   tt,

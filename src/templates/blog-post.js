@@ -4,14 +4,13 @@ import Link from 'gatsby-link'
 import styled from 'react-emotion'
 import { Flex, Box } from 'grid-emotion'
 import t from 'tachyons-js'
+import 'prismjs/themes/prism-solarizedlight.css'
 
 import { theme } from '../utils/theme'
 import Container from '../components/atoms/container'
 import TextBlock from '../components/atoms/text-block'
 import Avatar from '../components/molecules/avatar'
 import SocialIconsFollow from '../components/molecules/social-icons-follow'
-
-require('prismjs/themes/prism-solarizedlight.css')
 
 class BlogPostTemplate extends React.Component {
   render() {
