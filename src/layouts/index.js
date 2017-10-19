@@ -16,6 +16,10 @@ import Footer from '../components/organisms/footer'
 injectGlobal`
   ${normalize()}
 
+  html {
+    overflow-y: scroll;
+  }
+
   *,
   *::before,
   *::after {
@@ -29,6 +33,11 @@ injectGlobal`
     line-height: ${theme.lineHeightCopy};
     font-kerning: normal;
     font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+    color: ${theme.darkGray};
+  }
+
+  img {
+    max-width: 100%;
   }
 
   h1,
@@ -37,14 +46,42 @@ injectGlobal`
   h4,
   h5,
   h6 {
+    margin-top: ${theme.spacingExtraLarge};
+    margin-bottom: ${theme.spacingMediumLarge};
     font-family: ${theme.sansSerifDisplay};
     text-rendering: optimizeLegibility;
     letter-spacing: -0.02rem;
+    color: ${theme.nearBlack};
   }
 
   h1 {
     font-size: ${theme.fontSize1};
     line-height: calc(80 / 64);
+  }
+
+  h2 {
+    font-size: ${theme.fontSize3};
+    line-height: calc(48 / 30);
+  }
+
+  h3 {
+    font-size: ${theme.fontSize4};
+    line-height: calc(32 / 24);
+  }
+
+  h4 {
+    font-size: ${theme.fontSize5};
+    line-height: calc(24 / 20);
+  }
+
+  h5 {
+    font-size: ${theme.fontSize6};
+    line-height: calc(24 / 18);
+  }
+
+  h6 {
+    font-size: ${theme.fontSize7};
+    line-height: calc(24 / 16);
   }
 `
 

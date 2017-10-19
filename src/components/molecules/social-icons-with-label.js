@@ -24,7 +24,7 @@ const SocialIcon = styled(Icon)`
 
 const SocialIconLabel = styled.span`
   padding-left: ${props => props.theme.spacingMedium};
-  font-size: ${props => props.theme.fontSize5};
+  font-size: ${props => props.theme.fontSize6};
   line-height: calc(32 / 18);
 `
 

@@ -8,10 +8,10 @@ const LogoLink = styled(Link)`
   ${t.dib};
   ${t.link};
   padding-top: ${props => props.theme.spacingLarge};
-  padding-bottom: ${props => props.theme.spacingLarge};
+  padding-bottom: calc(${props => props.theme.spacingLarge} - 1px);
   font-family: ${props => props.theme.sansSerifDisplay};
   font-weight: 700;
-  font-size: ${props => props.theme.fontSize4};
+  font-size: ${props => props.theme.fontSize5};
   line-height: calc(24 / 20);
   color: ${props => props.theme.nearBlack};
 `

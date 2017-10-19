@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Link from 'gatsby-link'
 import styled from 'react-emotion'
 import { Flex, Box } from 'grid-emotion'
 import t from 'tachyons-js'
@@ -30,7 +31,7 @@ class BlogPostTemplate extends React.Component {
     const Meta = styled.div`
       ${t.ttu};
       font-family: ${theme.code};
-      font-size: ${theme.fontSize7};
+      font-size: ${theme.fontSize8};
       line-height: calc(24 / 15);
       letter-spacing: ${theme.tracked};
       color: ${theme.gray};
@@ -39,7 +40,7 @@ class BlogPostTemplate extends React.Component {
     const Categories = styled.div`
       ${t.ttu};
       font-family: ${theme.code};
-      font-size: ${theme.fontSize7};
+      font-size: ${theme.fontSize8};
       line-height: calc(24 / 15);
       letter-spacing: ${theme.tracked};
       color: ${theme.gray};
@@ -59,12 +60,12 @@ class BlogPostTemplate extends React.Component {
     `
 
     const AuthorBio = styled.p`
-      max-width: calc(${theme.spacingMediumLarge} * 14);
+      max-width: calc(${theme.spacingMedium} * 20);
       margin-top: ${theme.spacingLarge};
       margin-bottom: ${theme.spacingLarge};
       font-family: ${theme.serifDisplay};
       font-size: ${theme.fontSizeCopy};
-      line-height: calc(32 / 21);
+      line-height: calc(32 / 22);
       color: ${theme.darkGray};
     `
 
@@ -102,6 +103,27 @@ class BlogPostTemplate extends React.Component {
                 <TextBlock>
                   <div dangerouslySetInnerHTML={{ __html: post.html }} />
                 </TextBlock>
+
+                <div>
+                  {prev && (
+                    <Link to={prev.fields.slug}>
+                      <h4>Previous</h4>
+                      <span>
+                        {prev.frontmatter.title}
+                      </span>
+                    </Link>
+                  )}
+                </div>
+                <div>
+                  {next && (
+                    <Link to={next.fields.slug}>
+                      <h4>Next</h4>
+                      <span>
+                        {next.frontmatter.title}
+                      </span>
+                    </Link>
+                  )}
+                </div>
               </Box>
             </Flex>
           </Container>

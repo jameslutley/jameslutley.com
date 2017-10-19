@@ -3,7 +3,7 @@ import styled from 'react-emotion'
 import t from 'tachyons-js'
 
 const ContactDetails = styled.div`
-  font-size: ${props => props.theme.fontSize5};
+  font-size: ${props => props.theme.fontSize6};
   line-height: calc(32 / 18);
 `
 

@@ -22,6 +22,9 @@ const SocialIconLink = styled.a`
   }
 `
 
+const SocialIcon = styled('Icon')`
+`
+
 export default () =>
   <Flex wrap align='center' justify='flex-end'>
     <SocialIconLink href="https://twitter.com/jameslutley">

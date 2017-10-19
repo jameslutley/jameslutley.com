@@ -6,23 +6,8 @@ import t from 'tachyons-js'
 const TextBlockContainer = styled.section`
   font-family: ${props => props.theme.serif};
   font-size: ${props => props.theme.fontSizeCopy};
-  line-height: calc(32 / 21);
+  line-height: calc(32 / 22);
   color: ${props => props.theme.darkGray};
-
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-top: ${props => props.theme.spacingExtraLarge};
-    margin-bottom: ${props => props.theme.spacingMediumLarge};
-    color: ${props => props.theme.nearBlack};
-  }
-
-  p {
-    margin-top: ${props => props.theme.spacingMediumLarge};
-    margin-bottom: ${props => props.theme.spacingMediumLarge};
-  }
 
   p:first-child {
     ${t.mt0};
@@ -48,13 +33,96 @@ const TextBlockContainer = styled.section`
   }
 
   ul,
-  ol {
-    margin-top: ${props => props.theme.spacingMediumLarge};
+  ol,
+  dl,
+  dd,
+  p,
+  figure,
+  pre,
+  fieldset,
+  blockquote,
+  form,
+  noscript,
+  iframe,
+  address {
+    margin-top: 0;
     margin-bottom: ${props => props.theme.spacingMediumLarge};
-    padding-left: 0;
-    li {
+    padding: 0;
+  }
+
+
+  li {
+    margin-bottom: ${props => props.theme.spacingSmall};
+    > p {
       margin-bottom: ${props => props.theme.spacingSmall};
     }
+  }
+
+  ul,
+  ol {
+    li {
+      padding-left: 0;
+    }
+  }
+
+  li > {
+    ul,
+    ol {
+      margin-top: ${props => props.theme.spacingSmall};
+      margin-bottom: ${props => props.theme.spacingSmall};
+    }
+  }
+
+  blockquote,
+  li,
+  p {
+    *:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  abbr {
+    border-bottom: 1px dotted hsla(0,0%,0%,0.5);
+    cursor: help;
+  }
+
+  abbr[title] {
+    border-bottom: 1px dotted hsla(0,0%,0%,0.5);
+    cursor: help;
+    text-decoration: none;
+  }
+
+  pre {
+    padding: ${props => props.theme.spacingMediumLarge};
+    background: hsla(0,0%,0%,0.04);
+    font-family: ${props => props.theme.code};
+    font-size: ${props => props.theme.fontSize6};
+    line-height: calc(24 / 18);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  blockquote {
+    margin: 0 0 ${props => props.theme.spacingMediumLarge};
+    padding-left: ${props => props.theme.spacingMediumLarge};
+    border-left: calc(3rem / 16) solid ${props => props.theme.nearWhite};
+  }
+
+  hr {
+    height: 1px;
+    margin-bottom: calc(${props => props.theme.spacingMediumLarge} - 1px);
+    background:hsla(0,0%,0%,0.2);
+  }
+
+  code,
+  kbd,
+  samp {
+    font-family: ${props => props.theme.code};
+    font-size: ${props => props.theme.fontSize6};
+    line-height: calc(24 / 18);
   }
 `
 

@@ -18,7 +18,7 @@ const AvatarContent = styled.div`
 const AvatarTitle = styled.h4`
   margin-top: 0;
   margin-bottom: 0;
-  font-size: ${props => props.theme.fontSize5};
+  font-size: ${props => props.theme.fontSize6};
   line-height: calc(24 / 18);
   color: ${props => props.theme.nearBlack};
 `
@@ -27,6 +27,8 @@ const AvatarText = styled.span`
   ${t.db};
   ${t.i};
   font-family: ${props => props.theme.serif};
+  font-size: ${props => props.theme.fontSize7};
+  line-height: calc(24 / 16);
   color: ${props => props.theme.gray};
 `
 
