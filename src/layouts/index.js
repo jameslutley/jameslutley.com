@@ -27,6 +27,8 @@ injectGlobal`
     font-family: ${theme.sansSerif};
     font-size: ${theme.fontSize6}
     line-height: ${theme.lineHeightCopy};
+    font-kerning: normal;
+    font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   }
 
   h1,
@@ -36,6 +38,8 @@ injectGlobal`
   h5,
   h6 {
     font-family: ${theme.sansSerifDisplay};
+    text-rendering: optimizeLegibility;
+    letter-spacing: -0.02rem;
   }
 
   h1 {

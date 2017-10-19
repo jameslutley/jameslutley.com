@@ -5,6 +5,7 @@ import styled from 'react-emotion'
 import { Flex, Box } from 'grid-emotion'
 import t from 'tachyons-js'
 
+import { theme } from '../../utils/theme'
 import Container from '../atoms/container'
 import Avatar from '../molecules/avatar'
 import ContactDetails from '../molecules/contact-details'
@@ -18,16 +19,16 @@ const FooterContainer = styled.footer`
 `
 
 const Footer = ({ avatar, siteTitle }) =>
-  <FooterContainer>
+  <FooterContainer role='contentinfo'>
     <Container>
-      <Flex>
-        <Box width={1/4}>
+      <Flex mx={`-${theme.spacingMedium}`}>
+        <Box width={1/4} px={theme.spacingMedium}>
           <Avatar avatar={avatar} siteTitle={siteTitle} />
         </Box>
-        <Box width={1/4}>
+        <Box width={1/4} px={theme.spacingMedium}>
           <ContactDetails />
         </Box>
-        <Box width={1/2}>
+        <Box width={1/2} px={theme.spacingMedium}>
           <SocialIconsWithLabel />
         </Box>
       </Flex>

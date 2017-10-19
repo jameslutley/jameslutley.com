@@ -5,6 +5,7 @@ import styled from 'react-emotion'
 import { Flex, Box } from 'grid-emotion'
 import t from 'tachyons-js'
 
+import { theme } from '../../utils/theme'
 import Container from '../atoms/container'
 import Logo from '../atoms/logo'
 import Navigation from '../molecules/navigation'
@@ -16,14 +17,16 @@ const HeaderContainer = styled.header`
 `
 
 const Header = ({ siteTitle }) =>
-  <HeaderContainer>
+  <HeaderContainer role='banner'>
     <Container>
-      <Flex>
-        <Box width={1/4}>
+      <Flex mx={`-${theme.spacingMedium}`}>
+        <Box width={1/4} px={theme.spacingMedium}>
           <Logo siteTitle={siteTitle} />
         </Box>
-        <Navigation />
-        <Flex width={1/4} wrap align='center' justify='flex-end'>
+        <Flex px={theme.spacingMedium} align='center' justify='center' flex='1 1 auto'>
+          <Navigation />
+        </Flex>
+        <Flex width={1/4} px={theme.spacingMedium} wrap align='center' justify='flex-end'>
           <SocialIcons />
         </Flex>
       </Flex>
