@@ -126,13 +126,13 @@ p q r s t u v w x y z { | } ~
 <h3>Figures</h3>
 <p>The <code>figure</code> element is used to annotate illustrations, diagrams, photos, code listings or provide a citation for an excerpted piece of content. The following examples show a section of pre-formatted text, a quotation and an image:</p>
 
-![Da Nang Skyline](/public/static/1600x900.jpg)
+![Da Nang Skyline](/images/1600x900.jpg)
 
 _Single image, with supporting caption_
 
 <p>For figures using the <code><span>.u-extend</span></code> utility, the caption moves to the right at the largest breakpoint.</p>
 
-![Fresh vegetables](/public/static/1600x900-1.jpg)
+![Fresh vegetables](/images/1600x900-1.jpg)
 
 _Single image, with supporting caption to the right_
 
