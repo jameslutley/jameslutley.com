@@ -7,10 +7,9 @@ categories:
   - Tech
   - ''
 ---
-<h1>Scopes</h1>
 <p>Areas of user-generated content, with HTML that has come from a CMS.</p>
 
-<p>The introductory paragraph above uses the <code class="language-css highlighter-rouge"><span class="nc">.s-prose--lede</span></code> class to scope that content. The rest of the content on this page lies within the <code class="language-css highlighter-rouge"><span class="nc">.s-prose--body</span></code> scope<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>.</p>
+<p>The introductory paragraph above uses the <code>.s-prose--lede</code> class to scope that content. The rest of the content on this page lies within the <code>.s-prose--body</code> scope<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>.</p>
 
 <h2>Second-level heading</h2>
 <p>Main page headings are <code>h1</code> elements, so futher headings within this scope should start with <code>h2</code>, an example of which appears directly above. More than one may be used per page. Consider using an <code>h2</code> unless you need a header level of less importance, or as a sub-header to an existing <code>h2</code> element.</p>
@@ -203,17 +202,38 @@ echo 'Hello World!';
 </code></pre>
 
 ```javascript
-// In your gatsby-config.js
-plugins: [
-  {
-    resolve: `gatsby-transformer-remark`,
-    options: {
-      plugins: [
-        `gatsby-remark-prismjs`,
-      ]
+  const mongoose = require('mongoose');
+  const User = mongoose.model('User');
+  const promisify = require('es6-promisify');
+
+  // ...
+
+  exports.validateRegister = (req, res, next) => {
+    req.sanitizeBody('name');
+    req.checkBody('name', 'You must supply a name!').notEmpty();
+    req.checkBody('email', 'That email is not valid!').isEmail();
+    req.sanitizeBody('email').normalizeEmail({
+      remove_dots: false,
+      remove_extension: false,
+      gmail_remove_subaddress: false,
+    });
+    req.checkBody('password', 'Password cannot be blank!').notEmpty();
+    req.checkBody('password-confirm', 'Confirmed password cannot be blank!').notEmpty();
+  };
+    req.checkBody('password-confirm', 'Oops! Your passwords do not match').equals(req.body.password);
+
+    const errors = req.validationErrors();
+    if ( errors ) {
+      req.flash('error', errors.map(err => err.msg));
+      res.render('register', { title: 'Register', body: req.body, flashes: req.flash() });
+      return; // Stop the fn from running
     }
-  }
-]
+    next(); // There were no errors!
+  };
+    
+  exports.register = async (req, res, next) => {
+    // ...
+  };
 ```
 
 <h3>Variable</h3>
