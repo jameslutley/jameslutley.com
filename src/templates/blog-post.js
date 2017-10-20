@@ -4,7 +4,7 @@ import Link from 'gatsby-link'
 import styled from 'react-emotion'
 import { Flex, Box } from 'grid-emotion'
 import t from 'tachyons-js'
-import 'prismjs/themes/prism.css'
+import 'prismjs/themes/prism-solarizedlight.css'
 
 import { theme } from '../utils/theme'
 import Container from '../components/atoms/container'

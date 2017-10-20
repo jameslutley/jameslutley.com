@@ -109,15 +109,58 @@ const TextBlockContainer = styled.section`
     text-decoration: none;
   }
 
-  pre {
+  .gatsby-highlight {
     margin-left: -${props => props.theme.spacingLarge};
     margin-right: -${props => props.theme.spacingLarge};
     padding: ${props => props.theme.spacingLarge};
-    background: ${props => props.theme.washedBlue};
+    background: ${props => props.theme.nearWhite};
     font-family: ${props => props.theme.code};
     font-size: calc(17rem / 16);
     line-height: calc(24 / 17);
-    box-shadow: inset 0 0 0 1px ${props => props.theme.lightestBlue};
+    color: ${props => props.theme.darkGray};
+    box-shadow: inset 0 0 0 1px ${props => props.theme.lightestGray};
+    border-radius: calc(${props => props.theme.spacingExtraSmall} * 0.75);
+    overflow: auto;
+    position: relative;
+
+    &::-webkit-scrollbar {
+      width: ${props => props.theme.spacingSmall};
+      height: ${props => props.theme.spacingSmall};
+    }
+    &::-webkit-scrollbar-thumb {
+      background: ${props => props.theme.lightGray};
+      border-radius: 0 0 calc(${props => props.theme.spacingExtraSmall} * 0.75) calc(${props => props.theme.spacingExtraSmall} * 0.75);
+    }
+    &::-webkit-scrollbar-track {
+      background: ${props => props.theme.lightestGray};
+      border-radius: 0 0 calc(${props => props.theme.spacingExtraSmall} * 0.75) calc(${props => props.theme.spacingExtraSmall} * 0.75);
+    }
+
+    pre[class*='language-'] {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0;
+      border: 0;
+      background-color: transparent;
+      float: left;
+      min-width: 100%;
+      overflow: initial;
+    }
+
+    *::selection,
+    * ::selection {
+        background: ${props => props.theme.lightestGray};
+      }
+    }
+  }
+
+  .gatsby-highlight-code-line {
+    background-color: ${props => props.theme.white};
+    display: block;
+    margin-right: -${props => props.theme.spacingMedium};
+    margin-left: -${props => props.theme.spacingMedium};
+    padding-right: -${props => props.theme.spacingMedium};
+    padding-left: -${props => props.theme.spacingMedium};
     border-radius: calc(${props => props.theme.spacingExtraSmall} * 0.75);
   }
 
@@ -139,7 +182,7 @@ const TextBlockContainer = styled.section`
     padding-bottom: calc(${props => props.theme.spacingMedium} - 1px);
     text-align: left;
     font-feature-settings: 'tnum';
-    border-bottom: 1px solid ${props => props.theme.lightGray};
+    border-bottom: 1px solid ${props => props.theme.lightestGray};
   }
 
   blockquote {
@@ -178,7 +221,7 @@ const TextBlockContainer = styled.section`
   code {
     padding-left: ${props => props.theme.spacingExtraSmall};
     padding-right: ${props => props.theme.spacingExtraSmall};
-    background: ${props => props.theme.washedBlue};
+    background: ${props => props.theme.nearWhite};
     border-radius: calc(${props => props.theme.spacingExtraSmall} * 0.75);
   }
 
