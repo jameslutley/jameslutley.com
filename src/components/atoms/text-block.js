@@ -25,20 +25,6 @@ const TextBlockContainer = styled.section`
     }
   }
 
-  a {
-    ${t.link};
-    ${t.bb};
-    border-color: transparent;
-    color: ${props => props.theme.darkBlue};
-    transition: color 0.15s ease-in, border-color 0.15s ease-in;
-
-    &:hover,
-    &:focus {
-      color: ${props => props.theme.darkBlue};
-      border-color: ${props => props.theme.blue};
-    }
-  }
-
   ul,
   ol,
   dl,
@@ -57,7 +43,6 @@ const TextBlockContainer = styled.section`
     margin-bottom: ${props => props.theme.spacingMediumLarge};
     padding: 0;
   }
-
 
   li {
     margin-bottom: ${props => props.theme.spacingSmall};
@@ -82,15 +67,22 @@ const TextBlockContainer = styled.section`
     }
   }
 
+  figure {
+    margin: ${props => props.theme.spacingExtraLarge} -${props => props.theme.spacingLarge};
+  }
+
   img {
     max-width: calc(100% + ${props => props.theme.spacingExtraExtraLarge});
-    margin-left: -${props => props.theme.spacingLarge};
-    margin-right: -${props => props.theme.spacingLarge};
   }
 
   figcaption {
     ${t.db};
     ${t.tc};
+    margin-top: ${props => props.theme.spacingSmall};
+    font-family: ${props => props.theme.sansSerif};
+    font-size: ${props => props.theme.fontSize7};
+    line-height: ${props => props.theme.lineHeightCopy};
+    color: ${props => props.theme.gray};
   }
 
   blockquote,
@@ -99,6 +91,11 @@ const TextBlockContainer = styled.section`
     *:last-child{
       margin-bottom: 0;
     }
+  }
+
+  small {
+    font-size: ${props => props.theme.fontSize7};
+    line-height: ${props => props.theme.lineHeightCopy};
   }
 
   abbr {
@@ -146,9 +143,17 @@ const TextBlockContainer = styled.section`
   }
 
   blockquote {
-    margin: 0 0 ${props => props.theme.spacingMediumLarge};
+    margin: 0 0 ${props => props.theme.spacingMediumLarge} calc(-${props => props.theme.spacingMediumLarge} * 1.25);
     padding-left: ${props => props.theme.spacingMediumLarge};
-    border-left: calc(6rem / 16) solid ${props => props.theme.nearWhite};
+    border-left: calc(6rem / 16) solid ${props => props.theme.lightestGray};
+  }
+
+  cite {
+    ${t.fs_normal};
+    font-family: ${props => props.theme.sansSerif};
+    font-size: ${props => props.theme.fontSize7};
+    line-height: ${props => props.theme.lineHeightCopy};
+    color: ${props => props.theme.gray};
   }
 
   hr {

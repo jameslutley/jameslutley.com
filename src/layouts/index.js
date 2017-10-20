@@ -38,6 +38,7 @@ injectGlobal`
 
   img {
     max-width: 100%;
+    vertical-align: middle;
   }
 
   h1,
@@ -82,6 +83,20 @@ injectGlobal`
   h6 {
     font-size: ${theme.fontSize7};
     line-height: calc(24 / 16);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: ${theme.lightBlue};
+    text-decoration-skip: ink;
+    transition: color 0.15s ease-in, text-decoration-color 0.15s ease-in;
+
+    &:hover,
+    &:focus {
+      color: ${theme.nearBlack};
+      text-decoration-color: ${theme.blue};
+    }
   }
 `
 

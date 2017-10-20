@@ -46,9 +46,9 @@ export const theme = {
   nearWhite: '#f5f7fa',
   white: '#fff',
 
-  darkBlue: '#076ce0',
+  darkBlue: '#0660c7',
   blue: '#0779fa',
-  // lightBlue: '#6baefa',
+  lightBlue: '#6baefa',
   lightestBlue: '#e1edfa',
   washedBlue: '#f5faff',
 }
