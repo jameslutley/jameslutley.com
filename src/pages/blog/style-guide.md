@@ -56,12 +56,11 @@ p q r s t u v w x y z { | } ~
 <p>Nevertheless, nice song.</p>
 </blockquote>
 
-<p>If you wish to add a citation, enclose it within a <code>&lt;footer&gt;</code> tag:</p>
+<p>If you wish to add a citation, enclose it within a <code>&lt;cite&gt;</code> tag:</p>
 
 <blockquote>
 <p>Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy is perfect or all-wise. Indeed, it has been said that democracy is the worst form of government except all those other forms that have been tried from time to time.</p>
-<footer><p>Winston Churchill, in <cite><a href="http://hansard.millbanksystems.com/commons/1947/nov/11/parliament-bill#column_206">a speech to the House of Commons</a></cite>. 11th November 1947</p>
-</footer>
+<cite>— Winston Churchill, in <a href="http://hansard.millbanksystems.com/commons/1947/nov/11/parliament-bill#column_206">a speech to the House of Commons</a>. 11th November 1947</cite>
 </blockquote>
 
 <h3>Ordered list</h3>
