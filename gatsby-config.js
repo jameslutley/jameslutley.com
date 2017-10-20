@@ -18,6 +18,13 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 786,
+              backgroundColor: `#ffffff`,
+            },
+          },
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               // Class prefix for <pre> tags containing syntax highlighting;
@@ -30,6 +37,7 @@ module.exports = {
               classPrefix: 'language-',
             },
           },
+          `gatsby-remark-copy-linked-files`,
         ]
       }
     },
