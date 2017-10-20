@@ -126,13 +126,15 @@ p q r s t u v w x y z { | } ~
 <h3>Figures</h3>
 <p>The <code>figure</code> element is used to annotate illustrations, diagrams, photos, code listings or provide a citation for an excerpted piece of content. The following examples show a section of pre-formatted text, a quotation and an image:</p>
 
-![Da Nang Skyline](https://source.unsplash.com/Zj0ICCMaWmk/1600x900)
-*Single image, with supporting caption*
+![Da Nang Skyline](/public/static/1600x900.jpg)
+
+_Single image, with supporting caption_
 
 <p>For figures using the <code><span>.u-extend</span></code> utility, the caption moves to the right at the largest breakpoint.</p>
 
-![Fresh vegetables](https://source.unsplash.com/d5xQVtmTUeo/1600x900)
-*Single image, with supporting caption to the right*
+![Fresh vegetables](/public/static/1600x900-1.jpg)
+
+_Single image, with supporting caption to the right_
 
 <h2>Text-level Semantics</h2>
 <p>There are a number of inline <abbr title="HyperText Markup Language">HTML</abbr> elements you may use anywhere within other elements.</p>
@@ -161,6 +163,7 @@ p q r s t u v w x y z { | } ~
 <p>The <code>s</code> element is used to represent content that is no longer accurate or relevant. When indicating document edits i.e., marking a span of text as having been removed from a document, use the <code>del</code> element instead. Example:</p>
 
 <s>Recommended retail price: £3.99 per bottle</s>
+
 <p><strong>Now selling for just £2.99 a bottle!</strong></p>
 
 <h3>Citations</h3>
