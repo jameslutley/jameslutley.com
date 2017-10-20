@@ -49,6 +49,7 @@ const TextBlockContainer = styled.section`
   fieldset,
   blockquote,
   form,
+  table,
   noscript,
   iframe,
   address {
@@ -117,8 +118,8 @@ const TextBlockContainer = styled.section`
     padding: ${props => props.theme.spacingLarge};
     background: ${props => props.theme.washedBlue};
     font-family: ${props => props.theme.code};
-    font-size: ${props => props.theme.fontSize6};
-    line-height: calc(24 / 18);
+    font-size: calc(17rem / 16);
+    line-height: calc(24 / 17);
     box-shadow: inset 0 0 0 1px ${props => props.theme.lightestBlue};
     border-radius: calc(${props => props.theme.spacingExtraSmall} * 0.75);
   }
@@ -128,10 +129,26 @@ const TextBlockContainer = styled.section`
     border-collapse: collapse;
   }
 
+  thead {
+    text-align: left;
+    font-family: ${props => props.theme.sansSerifDisplay};
+    color: ${props => props.theme.nearBlack};
+  }
+
+  th,
+  td {
+    padding-top: ${props => props.theme.spacingExtraSmall};
+    padding-right: ${props => props.theme.spacingMedium};
+    padding-bottom: calc(${props => props.theme.spacingMedium} - 1px);
+    text-align: left;
+    font-feature-settings: 'tnum';
+    border-bottom: 1px solid ${props => props.theme.lightGray};
+  }
+
   blockquote {
     margin: 0 0 ${props => props.theme.spacingMediumLarge};
     padding-left: ${props => props.theme.spacingMediumLarge};
-    border-left: calc(3rem / 16) solid ${props => props.theme.nearWhite};
+    border-left: calc(6rem / 16) solid ${props => props.theme.nearWhite};
   }
 
   hr {
@@ -147,8 +164,8 @@ const TextBlockContainer = styled.section`
   kbd,
   samp {
     font-family: ${props => props.theme.code};
-    font-size: ${props => props.theme.fontSize6};
-    line-height: calc(32 / 18);
+    font-size: calc(17rem / 16);
+    line-height: calc(24 / 17);
     color: ${props => props.theme.darkGray};
   }
 
