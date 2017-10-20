@@ -127,13 +127,17 @@ p q r s t u v w x y z { | } ~
 <h3>Figures</h3>
 <p>The <code>figure</code> element is used to annotate illustrations, diagrams, photos, code listings or provide a citation for an excerpted piece of content. The following examples show a section of pre-formatted text, a quotation and an image:</p>
 
-<img src="https://source.unsplash.com/Zj0ICCMaWmk/1600x900" alt="">
-<em>Single image, with supporting caption</em>
+<figure>
+<img src="https://source.unsplash.com/Zj0ICCMaWmk/1600x900" alt="Da Nang Skyline">
+<figcaption>Single image, with supporting caption</figcaption>
+</figure>
 
 <p>For figures using the <code><span>.u-extend</span></code> utility, the caption moves to the right at the largest breakpoint.</p>
 
-<img src="https://source.unsplash.com/d5xQVtmTUeo/1600x900" alt="">
-<em>Single image, with supporting caption to the right</em>
+<figure>
+<img src="https://source.unsplash.com/d5xQVtmTUeo/1600x900" alt="Fresh vegetables">
+<figcaption>Single image, with supporting caption to the right</figcaption>
+</figure>
 
 <h2>Text-level Semantics</h2>
 <p>There are a number of inline <abbr title="HyperText Markup Language">HTML</abbr> elements you may use anywhere within other elements.</p>
