@@ -126,13 +126,13 @@ p q r s t u v w x y z { | } ~
 <h3>Figures</h3>
 <p>The <code>figure</code> element is used to annotate illustrations, diagrams, photos, code listings or provide a citation for an excerpted piece of content. The following examples show a section of pre-formatted text, a quotation and an image:</p>
 
-![Da Nang Skyline](/public/images/1600x900.jpg)
+![Da Nang Skyline](/public/static/1600x900.jpg)
 
 _Single image, with supporting caption_
 
 <p>For figures using the <code><span>.u-extend</span></code> utility, the caption moves to the right at the largest breakpoint.</p>
 
-![Fresh vegetables](/public/images/1600x900-1.jpg)
+![Fresh vegetables](/public/static/1600x900-1.jpg)
 
 _Single image, with supporting caption to the right_
 
@@ -204,38 +204,38 @@ echo 'Hello World!';
 </code></pre>
 
 ```javascript
-  const mongoose = require('mongoose');
-  const User = mongoose.model('User');
-  const promisify = require('es6-promisify');
+const mongoose = require('mongoose');
+const User = mongoose.model('User');
+const promisify = require('es6-promisify');
 
-  // ...
+// ...
 
-  exports.validateRegister = (req, res, next) => {
-    req.sanitizeBody('name');
-    req.checkBody('name', 'You must supply a name!').notEmpty();
-    req.checkBody('email', 'That email is not valid!').isEmail();
-    req.sanitizeBody('email').normalizeEmail({
-      remove_dots: false,
-      remove_extension: false,
-      gmail_remove_subaddress: false,
-    });
-    req.checkBody('password', 'Password cannot be blank!').notEmpty();
-    req.checkBody('password-confirm', 'Confirmed password cannot be blank!').notEmpty();
-  };
-    req.checkBody('password-confirm', 'Oops! Your passwords do not match').equals(req.body.password);
+exports.validateRegister = (req, res, next) => {
+  req.sanitizeBody('name');
+  req.checkBody('name', 'You must supply a name!').notEmpty();
+  req.checkBody('email', 'That email is not valid!').isEmail();
+  req.sanitizeBody('email').normalizeEmail({
+    remove_dots: false,
+    remove_extension: false,
+    gmail_remove_subaddress: false,
+  });
+  req.checkBody('password', 'Password cannot be blank!').notEmpty();
+  req.checkBody('password-confirm', 'Confirmed password cannot be blank!').notEmpty();
+};
+  req.checkBody('password-confirm', 'Oops! Your passwords do not match').equals(req.body.password);
 
-    const errors = req.validationErrors();
-    if ( errors ) {
-      req.flash('error', errors.map(err => err.msg));
-      res.render('register', { title: 'Register', body: req.body, flashes: req.flash() });
-      return; // Stop the fn from running
-    }
-    next(); // There were no errors!
-  };
+  const errors = req.validationErrors();
+  if ( errors ) {
+    req.flash('error', errors.map(err => err.msg));
+    res.render('register', { title: 'Register', body: req.body, flashes: req.flash() });
+    return; // Stop the fn from running
+  }
+  next(); // There were no errors!
+};
     
-  exports.register = async (req, res, next) => {
-    // ...
-  };
+exports.register = async (req, res, next) => {
+  // ...
+};
 ```
 
 <h3>Variable</h3>
