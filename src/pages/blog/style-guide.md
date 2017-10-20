@@ -1,7 +1,7 @@
 ---
 title: Style Guide
 date: 2017-10-19T21:24:36.600Z
-thumbnail: /public/static/photo-1505018620898-92616e1849cc.jpeg
+thumbnail: /public/static/11379333_499114960256764_1288126873_n.jpg
 categories:
   - Design
   - Tech
