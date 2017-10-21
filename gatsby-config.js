@@ -20,7 +20,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 912,
+              maxWidth: 848,
               backgroundColor: `#f5f7fa`,
               linkImagesToOriginal: false,
             },
@@ -51,5 +51,7 @@ module.exports = {
         showSpinner: false,
       },
     },
+    `gatsby-plugin-catch-links`,
+    `gatsby-plugin-netlify`,
   ],
 }
