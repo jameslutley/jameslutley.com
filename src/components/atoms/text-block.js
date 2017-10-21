@@ -67,18 +67,23 @@ const TextBlockContainer = styled.section`
     }
   }
 
-  figure {
-    margin: ${props => props.theme.spacingExtraLarge} -${props => props.theme.spacingLarge};
+  .gatsby-resp-image-wrapper {
+    margin-top: ${props => props.theme.spacingExtraLarge};
+    margin-left: -${props => props.theme.spacingLarge} !important;
+    margin-right: -${props => props.theme.spacingLarge} !important;
   }
 
-  img {
-    max-width: calc(100% + ${props => props.theme.spacingExtraExtraLarge});
+  .gatsby-resp-image-background-image,
+  .gatsby-resp-image-image {
+    max-width: calc(100% + ${props => props.theme.spacingLarge});
   }
 
-  figcaption {
+  p .gatsby-resp-image-wrapper + em {
     ${t.db};
     ${t.tc};
+    ${t.fs_normal};
     margin-top: ${props => props.theme.spacingSmall};
+    margin-bottom: ${props => props.theme.spacingExtraLarge};
     font-family: ${props => props.theme.sansSerif};
     font-size: ${props => props.theme.fontSize7};
     line-height: ${props => props.theme.lineHeightCopy};
