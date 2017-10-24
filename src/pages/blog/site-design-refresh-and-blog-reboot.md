@@ -1,7 +1,7 @@
 ---
-title: Site Design Refresh and Blog Reboot
+title: "Site Design Refresh and Blog Reboot"
 date: 2015-10-25T18:31:15+07:00
-thumbnail: /public/static/11379333_499114960256764_1288126873_n.jpg
+thumbnail: "../../images/post-1.jpg"
 categories:
   - Design
   - Tech

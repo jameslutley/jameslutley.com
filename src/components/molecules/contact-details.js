@@ -3,15 +3,35 @@ import styled from 'react-emotion'
 import t from 'tachyons-js'
 
 const ContactDetails = styled.div`
-  font-size: ${props => props.theme.fontSize6};
-  line-height: calc(32 / 18);
+  margin-top: ${props => props.theme.spacingMediumLarge};
+  margin-bottom: ${props => props.theme.spacingMediumLarge};
+  font-size: ${props => props.theme.fontSize7};
+  line-height: ${props => props.theme.lineHeightCopy};
+
+  ${props => props.theme.Phablet} {
+    ${t.mv0};
+  }
+
+  ${props => props.theme.VVHd} {
+    font-size: ${props => props.theme.fontSize6};
+    line-height: calc(32 / 18);
+  }
 `
 
 const ContactDetailsLink = styled.a`
   ${t.db};
   ${t.link};
-  margin-bottom: ${props => props.theme.spacingMedium};
+  margin-bottom: ${props => props.theme.spacingSmall};
+  font-family: ${props => props.theme.sansSerif};
   color: ${props => props.theme.gray};
+
+  ${props => props.theme.Desktop} {
+    margin-bottom: ${props => props.theme.spacingMedium};
+  }
+
+  &:last-child {
+    ${t.mb0};
+  }
 `
 
 export default () =>

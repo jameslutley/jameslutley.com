@@ -2,36 +2,78 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import styled from 'react-emotion'
-import { Flex, Box } from 'grid-emotion'
 import t from 'tachyons-js'
 
-import { theme } from '../../utils/theme'
 import Container from '../atoms/container'
 import Avatar from '../molecules/avatar'
 import ContactDetails from '../molecules/contact-details'
 import SocialIconsWithLabel from '../molecules/social-icons-with-label'
 
 const FooterContainer = styled.footer`
-  padding-top: calc(${props => props.theme.spacingExtraExtraLarge} - 1px);
-  padding-bottom: ${props => props.theme.spacingExtraLarge};
   ${t.bt};
+  padding-top: calc(${props => props.theme.spacingMediumLarge} - 1px);
+  padding-bottom: ${props => props.theme.spacingSmall};
   border-color: ${props => props.theme.lightGray};
+
+  ${props => props.theme.Desktop} {
+    padding-top: calc(${props => props.theme.spacingExtraLarge} - 1px);
+    padding-bottom: ${props => props.theme.spacingLarge};
+  }
+
+  ${props => props.theme.VVHd} {
+    padding-top: calc(${props => props.theme.spacingExtraExtraLarge} - 1px);
+    padding-bottom: ${props => props.theme.spacingExtraLarge};
+  }
+`
+
+const FooterInner = styled.div`
+  ${t.flex};
+  ${t.flex_wrap};
+  margin-left: -${props => props.theme.spacingMedium};
+  margin-right: -${props => props.theme.spacingMedium};
+`
+
+const FooterItemQuarter = styled.div`
+  ${t.flex};
+  ${t.items_center};
+  ${t.w_100};
+  padding-left: ${props => props.theme.spacingMedium};
+  padding-right: ${props => props.theme.spacingMedium};
+
+  ${props => props.theme.Phablet} {
+    ${t.w_50};
+  }
+
+  ${props => props.theme.Desktop} {
+    ${t.items_start};
+    ${t.w_25};
+  }
+`
+
+const FooterItemHalf = styled.div`
+  ${t.w_100};
+  padding-left: ${props => props.theme.spacingMedium};
+  padding-right: ${props => props.theme.spacingMedium};
+
+  ${props => props.theme.Desktop} {
+    ${t.w_50};
+  }
 `
 
 const Footer = ({ avatar, siteTitle }) =>
   <FooterContainer role='contentinfo'>
     <Container>
-      <Flex mx={`-${theme.spacingMedium}`}>
-        <Box width={1/4} px={theme.spacingMedium}>
+      <FooterInner>
+        <FooterItemQuarter>
           <Avatar avatar={avatar} siteTitle={siteTitle} />
-        </Box>
-        <Box width={1/4} px={theme.spacingMedium}>
+        </FooterItemQuarter>
+        <FooterItemQuarter>
           <ContactDetails />
-        </Box>
-        <Box width={1/2} px={theme.spacingMedium}>
+        </FooterItemQuarter>
+        <FooterItemHalf>
           <SocialIconsWithLabel />
-        </Box>
-      </Flex>
+        </FooterItemHalf>
+      </FooterInner>
     </Container>
   </FooterContainer>
 

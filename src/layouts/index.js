@@ -17,7 +17,43 @@ injectGlobal`
   ${normalize()}
 
   html {
-    overflow-y: scroll;
+    ${t.overflow_y_scroll};
+  }
+
+  html,
+  body,
+  div,
+  article,
+  section,
+  main,
+  footer,
+  header,
+  form,
+  fieldset,
+  legend,
+  pre,
+  code,
+  a,
+  h1,h2,h3,h4,h5,h6,
+  p,
+  ul,
+  ol,
+  li,
+  dl,
+  dt,
+  dd,
+  textarea,
+  table,
+  td,
+  th,
+  tr,
+  input[type="email"],
+  input[type="number"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="url"] {
+    box-sizing: border-box;
   }
 
   *,
@@ -37,8 +73,8 @@ injectGlobal`
   }
 
   img {
-    max-width: 100%;
-    vertical-align: middle;
+    ${t.mw_100};
+    ${t.v_mid};
   }
 
   h1,
@@ -47,17 +83,27 @@ injectGlobal`
   h4,
   h5,
   h6 {
-    margin-top: ${theme.spacingExtraLarge};
+    margin-top: ${theme.spacingMediumLarge};
     margin-bottom: ${theme.spacingMediumLarge};
     font-family: ${theme.sansSerifDisplay};
     text-rendering: optimizeLegibility;
     letter-spacing: -0.02rem;
     color: ${theme.nearBlack};
+
+    ${theme.Desktop} {
+      margin-top: ${theme.spacingExtraLarge};
+      margin-bottom: ${theme.spacingMediumLarge};
+    }
   }
 
   h1 {
-    font-size: ${theme.fontSize1};
-    line-height: calc(80 / 64);
+    font-size: ${theme.fontSize2};
+    line-height: calc(64 / 48);
+
+    ${theme.Desktop} {
+      font-size: ${theme.fontSize1};
+      line-height: calc(80 / 64);
+    }
   }
 
   h2 {
@@ -139,7 +185,10 @@ export const query = graphql`
 `
 
 DefaultLayout.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.object,
+  ]).isRequired,
   data: PropTypes.object.isRequired,
 }
 
