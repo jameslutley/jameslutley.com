@@ -1,7 +1,7 @@
 ---
-title: Style Guide
+title: "Style Guide"
 date: 2017-10-19T21:24:36.600Z
-thumbnail: ../../images/11379333_499114960256764_1288126873_n.jpg
+thumbnail: "../../images/post-2.jpg"
 categories:
   - Design
   - Tech
@@ -125,12 +125,12 @@ p q r s t u v w x y z { | } ~
 <h3>Figures</h3>
 <p>The <code>figure</code> element is used to annotate illustrations, diagrams, photos, code listings or provide a citation for an excerpted piece of content. The following examples show a section of pre-formatted text, a quotation and an image:</p>
 
-![Da Nang skyline](../../images/1600x900.jpg)
+![Da Nang skyline](../../images/da-nang-skyline.jpg)
 _Single image, with supporting caption_
 
 <p>For figures using the <code><span>.u-extend</span></code> utility, the caption moves to the right at the largest breakpoint.</p>
 
-![Fresh vegetables](../../images/1600x900-1.jpg)
+![Vietnamese food](../../images/vietnamese-food.jpg)
 _Single image, with supporting caption to the right_
 
 <h2>Text-level Semantics</h2>

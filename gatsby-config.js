@@ -20,7 +20,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 848,
+              maxWidth: 912,
               backgroundColor: `#f5f7fa`,
               linkImagesToOriginal: false,
             },
@@ -28,13 +28,6 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              // Class prefix for <pre> tags containing syntax highlighting;
-              // defaults to 'language-' (eg <pre class="language-js">).
-              // If your site loads Prism into the browser at runtime,
-              // (eg for use with libraries like react-live),
-              // you may use this to prevent Prism from re-processing syntax.
-              // This is an uncommon use-case though;
-              // If you're unsure, it's best to use the default value.
               classPrefix: 'language-',
             },
           },
@@ -51,6 +44,7 @@ module.exports = {
         showSpinner: false,
       },
     },
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-netlify`,
   ],

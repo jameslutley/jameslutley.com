@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'react-emotion'
-import { Flex } from 'grid-emotion'
 import t from 'tachyons-js'
 import Icon from 'react-icons-kit'
 import { twitter } from 'react-icons-kit/fa/twitter'
@@ -8,25 +7,31 @@ import { instagram } from 'react-icons-kit/fa/instagram'
 import { dribbble } from 'react-icons-kit/fa/dribbble'
 import { github } from 'react-icons-kit/fa/github'
 
+const SocialIconsInner = styled.div`
+  ${t.flex};
+  ${t.flex_wrap};
+  ${t.items_center};
+  ${t.justify_end};
+`
+
 const SocialIconLink = styled.a`
   ${t.link};
-  ${t.dib};
-  padding: ${props => props.theme.spacingSmallMedium};
-  width: ${props => props.theme.spacingMediumLarge};
-  height: ${props => props.theme.spacingMediumLarge};
+  ${t.inline_flex};
+  padding: ${props => props.theme.spacingExtraSmall};
   line-height: ${props => props.theme.lineHeightSolid};
   color: ${props => props.theme.nearBlack};
 
   &:last-child {
-    padding-right: 0;
+    ${t.pr0};
+  }
+
+  ${props => props.theme.Mobile} {
+    padding: ${props => props.theme.spacingSmallMedium};
   }
 `
 
-const SocialIcon = styled('Icon')`
-`
-
 export default () =>
-  <Flex wrap align='center' justify='flex-end'>
+  <SocialIconsInner>
     <SocialIconLink href="https://twitter.com/jameslutley">
       <Icon icon={twitter} size={24} />
     </SocialIconLink>
@@ -39,4 +44,4 @@ export default () =>
     <SocialIconLink href="https://github.com/jameslutley">
       <Icon icon={github} size={24} />
     </SocialIconLink>
-  </Flex>
+  </SocialIconsInner>

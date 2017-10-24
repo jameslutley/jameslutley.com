@@ -5,23 +5,44 @@ import t from 'tachyons-js'
 
 const TextBlockContainer = styled.section`
   font-family: ${props => props.theme.serif};
-  font-size: ${props => props.theme.fontSizeCopy};
-  line-height: calc(32 / 22);
+  font-size: ${props => props.theme.fontSize6};
+  line-height: calc(28 / 18);
   color: ${props => props.theme.darkGray};
+
+  ${props => props.theme.Tablet} {
+    font-size: ${props => props.theme.fontSize5};
+    line-height: calc(32 / 20);
+  }
+
+  ${props => props.theme.Hd} {
+    font-size: ${props => props.theme.fontSizeCopy};
+    line-height: calc(32 / 22);
+  }
 
   div {
     > h1:first-of-type,
     > h2:first-of-type {
-      margin-top: 0;
+      ${t.mt0};
     }
 
     > p:first-of-type {
       ${t.mt0};
-      margin-bottom: ${props => props.theme.spacingExtraLarge};
+      margin-bottom: ${props => props.theme.spacingMediumLarge};
       font-family: ${props => props.theme.serifDisplay};
-      font-size: ${props => props.theme.fontSizeLead};
-      line-height: calc(40 / 28);
+      font-size: ${props => props.theme.fontSizeCopy};
+      line-height: calc(32 / 22);
       color: ${props => props.theme.nearBlack};
+
+      ${props => props.theme.Tablet} {
+        margin-bottom: ${props => props.theme.spacingExtraLarge};
+        font-size: ${props => props.theme.fontSize4};
+        line-height: calc(36 / 24);
+      }
+
+      ${props => props.theme.VHd} {
+        font-size: ${props => props.theme.fontSizeLead};
+        line-height: calc(40 / 28);
+      }
     }
   }
 
@@ -39,22 +60,28 @@ const TextBlockContainer = styled.section`
   noscript,
   iframe,
   address {
-    margin-top: 0;
+    ${t.mt0};
+    ${t.pa0};
     margin-bottom: ${props => props.theme.spacingMediumLarge};
-    padding: 0;
+  }
+
+  ul,
+  ol {
+    padding-left: ${props => props.theme.fontSize6};
+
+    ${props => props.theme.Desktop} {
+      padding-left: ${props => props.theme.fontSizeCopy};
+    }
+
+    li {
+      ${t.pl0};
+    }
   }
 
   li {
     margin-bottom: ${props => props.theme.spacingSmall};
     > p {
       margin-bottom: ${props => props.theme.spacingSmall};
-    }
-  }
-
-  ul,
-  ol {
-    li {
-      padding-left: 0;
     }
   }
 
@@ -69,13 +96,22 @@ const TextBlockContainer = styled.section`
 
   .gatsby-resp-image-wrapper {
     margin-top: ${props => props.theme.spacingExtraLarge};
-    margin-left: -${props => props.theme.spacingLarge} !important;
-    margin-right: -${props => props.theme.spacingLarge} !important;
+    margin-left: -${props => props.theme.spacingMedium} !important;
+    margin-right: -${props => props.theme.spacingMedium} !important;
+
+    ${props => props.theme.Phablet} {
+      margin-left: -${props => props.theme.spacingLarge} !important;
+      margin-right: -${props => props.theme.spacingLarge} !important;
+    }
   }
 
   .gatsby-resp-image-background-image,
   .gatsby-resp-image-image {
-    max-width: calc(100% + ${props => props.theme.spacingLarge});
+    max-width: calc(100% + ${props => props.theme.spacingMedium});
+
+    ${props => props.theme.Phablet} {
+      max-width: calc(100% + ${props => props.theme.spacingLarge});
+    }
   }
 
   p .gatsby-resp-image-wrapper + em {
@@ -94,7 +130,7 @@ const TextBlockContainer = styled.section`
   li,
   p {
     *:last-child{
-      margin-bottom: 0;
+      ${t.mb0};
     }
   }
 
@@ -111,22 +147,30 @@ const TextBlockContainer = styled.section`
   abbr[title] {
     border-bottom: 1px dotted ${props => props.theme.lightGray};
     cursor: help;
-    text-decoration: none;
+    ${t.no_underline};
   }
 
   .gatsby-highlight {
-    margin-left: -${props => props.theme.spacingLarge};
-    margin-right: -${props => props.theme.spacingLarge};
+    ${t.overflow_auto};
+    ${t.relative};
     padding: ${props => props.theme.spacingLarge};
     background: ${props => props.theme.nearWhite};
     font-family: ${props => props.theme.code};
-    font-size: calc(17rem / 16);
-    line-height: calc(24 / 17);
+    font-size: ${props => props.theme.fontSize9};
+    line-height: calc(20 / 14);
     color: ${props => props.theme.darkGray};
     box-shadow: inset 0 0 0 1px ${props => props.theme.lightestGray};
     border-radius: calc(${props => props.theme.spacingExtraSmall} * 0.75);
-    overflow: auto;
-    position: relative;
+
+    ${props => props.theme.Tablet} {
+      font-size: ${props => props.theme.fontSize7};
+      line-height: ${props => props.theme.lineHeightCopy};
+    }
+
+    ${props => props.theme.Hd} {
+      margin-left: -${props => props.theme.spacingLarge};
+      margin-right: -${props => props.theme.spacingLarge};
+    }
 
     &::-webkit-scrollbar {
       width: ${props => props.theme.spacingSmall};
@@ -142,12 +186,11 @@ const TextBlockContainer = styled.section`
     }
 
     pre[class*='language-'] {
-      margin-top: 0;
-      margin-bottom: 0;
-      padding: 0;
-      border: 0;
-      background-color: transparent;
-      float: left;
+      ${t.mv0};
+      ${t.pa0};
+      ${t.bn};
+      ${t.fl};
+      ${t.bg_transparent};
       min-width: 100%;
       overflow: initial;
     }
@@ -160,8 +203,8 @@ const TextBlockContainer = styled.section`
   }
 
   .gatsby-highlight-code-line {
+    ${t.db};
     background-color: ${props => props.theme.white};
-    display: block;
     margin-right: -${props => props.theme.spacingMedium};
     margin-left: -${props => props.theme.spacingMedium};
     padding-right: -${props => props.theme.spacingMedium};
@@ -170,30 +213,36 @@ const TextBlockContainer = styled.section`
   }
 
   table {
-    width: 100%;
-    border-collapse: collapse;
+    ${t.w_100};
+    ${t.collapse};
   }
 
   thead {
-    text-align: left;
+    ${t.tl};
     font-family: ${props => props.theme.sansSerifDisplay};
     color: ${props => props.theme.nearBlack};
   }
 
   th,
   td {
+    ${t.tl};
+    ${t.bb};
     padding-top: ${props => props.theme.spacingExtraSmall};
     padding-right: ${props => props.theme.spacingMedium};
     padding-bottom: calc(${props => props.theme.spacingMedium} - 1px);
-    text-align: left;
     font-feature-settings: 'tnum';
-    border-bottom: 1px solid ${props => props.theme.lightestGray};
+    border-color: ${props => props.theme.lightestGray};
   }
 
   blockquote {
-    margin: 0 0 ${props => props.theme.spacingMediumLarge} calc(-${props => props.theme.spacingMediumLarge} * 1.25);
-    padding-left: ${props => props.theme.spacingMediumLarge};
+    ${t.mh0};
+    padding-left: ${props => props.theme.spacingMedium};
     border-left: calc(6rem / 16) solid ${props => props.theme.lightestGray};
+
+    ${props => props.theme.Tablet} {
+      margin: 0 0 ${props => props.theme.spacingMediumLarge} calc(-${props => props.theme.spacingMediumLarge} * 1.25);
+      padding-left: ${props => props.theme.spacingMediumLarge};
+    }
   }
 
   cite {
@@ -205,11 +254,16 @@ const TextBlockContainer = styled.section`
   }
 
   hr {
+    ${t.bn};
     height: 1px;
-    margin-top: ${props => props.theme.spacingExtraLarge};
-    margin-bottom: calc(${props => props.theme.spacingExtraLarge} - 1px);
+    margin-top: ${props => props.theme.spacingLarge};
+    margin-bottom: calc(${props => props.theme.spacingLarge} - 1px);
     background: ${props => props.theme.lightGray};
-    border: 0;
+
+    ${props => props.theme.Desktop} {
+      margin-top: ${props => props.theme.spacingExtraLarge};
+      margin-bottom: calc(${props => props.theme.spacingExtraLarge} - 1px);
+    }
   }
 
   tt,
@@ -217,9 +271,14 @@ const TextBlockContainer = styled.section`
   kbd,
   samp {
     font-family: ${props => props.theme.code};
-    font-size: calc(17rem / 16);
-    line-height: calc(24 / 17);
+    font-size: ${props => props.theme.fontSize9};
+    line-height: calc(20 / 14);
     color: ${props => props.theme.darkGray};
+
+    ${props => props.theme.Tablet} {
+      font-size: ${props => props.theme.fontSize7};
+      line-height: ${props => props.theme.lineHeightCopy};
+    }
   }
 
   tt,
@@ -231,9 +290,8 @@ const TextBlockContainer = styled.section`
   }
 
   pre code {
-    background: none;
-    padding-left: 0;
-    padding-right: 0;
+    ${t.ph0};
+    ${t.bg_transparent};
   }
 `
 

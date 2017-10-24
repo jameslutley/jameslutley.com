@@ -1,10 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
 import Img from 'gatsby-image'
 import styled from 'react-emotion'
-import { Flex } from 'grid-emotion'
 import t from 'tachyons-js'
+
+const AvatarContainer = styled.div`
+  ${t.flex};
+  ${t.items_center};
+  line-height: ${props => props.theme.lineHeightSolid};
+`
 
 const AvatarImage = styled(Img)`
   ${t.br_100};
@@ -16,8 +20,7 @@ const AvatarContent = styled.div`
 `
 
 const AvatarTitle = styled.h4`
-  margin-top: 0;
-  margin-bottom: 0;
+  ${t.mv0};
   font-size: ${props => props.theme.fontSize6};
   line-height: calc(24 / 18);
   color: ${props => props.theme.nearBlack};
@@ -33,7 +36,7 @@ const AvatarText = styled.span`
 `
 
 const Avatar = ({ avatar, siteTitle }) =>
-  <Flex align='center'>
+  <AvatarContainer>
     <AvatarImage
       resolutions={avatar}
       alt={siteTitle}
@@ -46,7 +49,7 @@ const Avatar = ({ avatar, siteTitle }) =>
         Designer &amp; Developer
       </AvatarText>
     </AvatarContent>
-  </Flex>
+  </AvatarContainer>
 
 Avatar.propTypes = {
   avatar: PropTypes.object.isRequired,
