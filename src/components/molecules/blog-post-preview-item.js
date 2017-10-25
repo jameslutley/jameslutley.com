@@ -95,7 +95,6 @@ export default BlogPostPreviewItem
 
 export const blogPostPreviewFragment = graphql`
   fragment BlogPostPreview_item on MarkdownRemark {
-    excerpt
     fields {
       slug
     }
